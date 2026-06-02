@@ -42,8 +42,16 @@ sudo apt install -y \
   curl \
   unzip \
   xz-utils \
-  ca-certificates \
-  direnv
+  ca-certificates
+
+# ============================================================
+# direnv (upstream binary — apt's version on Ubuntu 22.04 ships 2.28,
+# which lacks `use_flake` (added in 2.30). Install latest into
+# /usr/local/bin so it takes precedence over any apt copy.
+# ============================================================
+
+info "direnv (最新版) をインストールします"
+curl -sfL https://direnv.net/install.sh | sudo bash
 
 # ============================================================
 # GitHub CLI
