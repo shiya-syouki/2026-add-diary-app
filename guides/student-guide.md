@@ -13,7 +13,6 @@
 - GitHub アカウント
 - Anthropic API Key (授業中に配布、または各自取得)
 - iPhone または Android スマートフォン
-- 安定したネット接続 (テザリングだと tunnel モード必須)
 
 > Mac の人は教員側ノートを参照。WSL は不要。
 
@@ -30,6 +29,17 @@
 
 ## 2. WSL Ubuntu を開く
 
+2 つのやり方を紹介します。  
+（2 つ目のやり方は試せていないので、もし駄目だったら教えて下さい🥺）
+
+### やり方 1
+
+Windows Powershell を起動する。  
+`wsl` というコマンドを実行する。 
+wsl が起動する。
+
+### やり方 2
+
 スタートメニューから **Ubuntu** を起動。
 ターミナル (黒い画面) が開く。
 
@@ -39,7 +49,7 @@
 
 ## 3. セットアップスクリプトを実行 (1 行)
 
-Ubuntu のターミナルに、以下を **コピペして Enter**。
+WSL (Ubuntu) のターミナルに、以下を **コピペして Enter**。
 
 ```bash
 bash <(curl -fsSL https://raw.githubusercontent.com/ncc-toda/2026-add-diary-app/main/scripts/setup.sh)
@@ -58,7 +68,7 @@ bash <(curl -fsSL https://raw.githubusercontent.com/ncc-toda/2026-add-diary-app/
 9. `pnpm install` で JS パッケージを取得
 10. Cursor を WSL リモートとして自動オープン
 
-**所要時間**: 通信状況にもよるが、おおむね 10〜20 分。
+**所要時間**: 通信状況にもよるが、おおむね 5〜10 分。
 途中で `sudo` のパスワードを聞かれることがあるので、Ubuntu のパスワードを入力。
 
 ---
@@ -98,7 +108,6 @@ OpenCode の TUI (対話型画面) が起動する。
 3. 「ログインしました」のメッセージが出たら成功
 
 > Key は OpenCode の設定ファイル (`~/.config/opencode/...`) に保存される。
-> リポジトリには一切混入しないので、**git に push する心配はゼロ**。
 >
 > もし TUI を閉じてしまっても、もう一度 `opencode` を起動すれば前回の Key が使われる。
 
